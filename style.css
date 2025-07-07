@@ -41,6 +41,7 @@ h1 {
   margin-bottom: 5px; /* Space below heading */
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Consistent font */
   text-align: left; /* Align text to the left */
+  font-weight: 400; /* Make font less thick */
   margin-left: 20px; /* Remove any left margin */
   padding-left: 20px; /* Remove any left padding */
   width: 100vw; /* Make h1 span the full viewport width */
@@ -49,14 +50,49 @@ h1 {
 }
 
 /*
-  Subheading (h2): smaller, blue, and lighter weight.
+  Logo-title row: align h1 next to the fixed logo using absolute positioning.
 */
-h2 {
+.logo-title-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0; /* Remove margin below, h2 will control spacing */
+  height: auto;
+  position: absolute; /* Absolute positioning */
+  top: 24px; /* Distance from top */
+  left: 32px; /* Distance from left */
+  z-index: 10; /* Above other content */
+}
+
+.logo-title-row h1 {
+  position: static;
+  left: auto;
+  top: auto;
+  transform: none;
+  font-size: 40px;
+  color: #fff;
+  margin: 0;
+  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: left;
+  width: auto;
+  max-width: none;
+  box-sizing: border-box;
+  font-weight: 400; /* Make font less thick in logo-title-row as well */
+}
+
+/*
+  Subheading (h2): place directly below the logo-title-row, right-aligned, with spacing.
+*/
+.h2-below-logo {
+  position: static; /* Use normal flow so it appears below logo-title-row */
+  margin: 12px 0 32px auto; /* Space above, below, and push right */
+  width: 420px; /* Fixed width for alignment */
+  max-width: 50vw; /* Responsive max width */
   font-size: 12px; /* Medium font size */
-  color: #ffc907; /* Change to primary yellow */
-  margin-bottom: 32px; /* Space below subheading */
+  color: #ffc907; /* Primary yellow */
   font-weight: 400; /* Normal weight */
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Consistent font */
+  text-align: right; /* Align text to the right */
+  z-index: 9;
 }
 
 /*
@@ -88,8 +124,8 @@ h2 {
   background-color: #ffc907; /* Primary yellow */
   color: #003366; /* Primary blue text */
   border: none; /* Remove border */
-  padding: 16px 32px; /* Button size */
-  font-size: 16px; /* Readable text */
+  padding: 8px 18px; /* Smaller button size */
+  font-size: 14px; /* Smaller text */
   border-radius: 8px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Consistent font */
@@ -141,35 +177,6 @@ footer {
 }
 
 /*
-  Logo-title row: align h1 next to the fixed logo using absolute positioning.
-*/
-.logo-title-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-  height: auto;
-  position: absolute; /* Absolute positioning */
-  top: 24px; /* Distance from top */
-  left: 32px; /* Distance from left */
-  z-index: 10; /* Above other content */
-}
-
-.logo-title-row h1 {
-  position: static;
-  left: auto;
-  top: auto;
-  transform: none;
-  font-size: 40px;
-  color: #fff;
-  margin: 0;
-  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  text-align: left;
-  width: auto;
-  max-width: none;
-  box-sizing: border-box;
-}
-
-/*
   Position donate button in the top right corner.
 */
 .donate-top-right {
@@ -177,6 +184,80 @@ footer {
   top: 24px;
   right: 32px;
   z-index: 20;
+}
+
+/*
+  Images above h2: horizontally aligned, centered, and responsive.
+*/
+.above-h2-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 18px; /* Space between images */
+  margin: 18px 0 0 0; /* Space above images */
+}
+.above-h2-img {
+  height: 48px;
+  width: auto;
+  border-radius: 12px; /* Optional: rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Subtle shadow */
+  background: #fff0; /* Transparent background */
+}
+@media (max-width: 600px) {
+  .above-h2-images {
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .above-h2-img {
+    height: 32px;
+  }
+}
+
+/*
+  Images below h2: 2x2 grid, each pair stacked vertically and pairs aligned horizontally.
+*/
+.below-h2-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px; /* Space between the two columns */
+  margin: 18px 0 0 0;
+}
+.image-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px; /* Space between stacked images */
+}
+.below-h2-img {
+  height: 150px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff0;
+}
+@media (max-width: 900px) {
+  .below-h2-images {
+    gap: 16px;
+  }
+  .below-h2-img {
+    height: 100px;
+  }
+}
+@media (max-width: 600px) {
+  .below-h2-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    margin-top: 8px;
+  }
+  .image-pair {
+    flex-direction: row;
+    gap: 8px;
+  }
+  .below-h2-img {
+    height: 64px;
+  }
 }
 
 /*
@@ -203,5 +284,20 @@ footer {
   }
   .impact-image img {
     max-width: 100vw; /* Full viewport width */
+  }
+  .logo-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    left: 8px;
+    top: 16px;
+  }
+  .h2-below-logo {
+    width: 100vw;
+    max-width: 100vw;
+    margin: 8px 0 24px 0;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
