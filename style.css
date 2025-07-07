@@ -218,10 +218,10 @@ footer {
 */
 .below-h2-images {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* Aligns the grid to the right */
   align-items: flex-start;
-  gap: 48px; /* Space between the two columns */
-  margin: 18px 0 0 0;
+  gap: 16px; /* Tighter space between columns */
+  margin: -100px 32px 0 auto; /* Negative top margin pulls images closer to header */
 }
 .image-pair {
   display: flex;
@@ -299,5 +299,8 @@ footer {
     text-align: left;
     padding-left: 8px;
     padding-right: 8px;
+  }
+  h2, .h2-below-logo {
+    color: #ffc907; /* Primary yellow */
   }
 }
