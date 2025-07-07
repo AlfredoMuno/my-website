@@ -1,6 +1,13 @@
 /* Blank stylesheet for custom styles */
 
 /*
+  Ensure all h2 elements are yellow, regardless of screen size, using !important for maximum specificity.
+*/
+h2 {
+  color: #ffc907 !important; /* Primary yellow, enforced globally */
+}
+
+/*
   Main body styles: set up font, background, color, and center content vertically and horizontally.
 */
 body {
@@ -36,8 +43,8 @@ header {
   Main heading (h1): large, bold, and yellow for impact.
 */
 h1 {
-  font-size: 40px; /* Large font size */
-  color: #fff; /* Change to white */
+  font-size: 56px; /* Larger font size */
+  color: #fff; /* White */
   margin-bottom: 5px; /* Space below heading */
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Consistent font */
   text-align: left; /* Align text to the left */
@@ -68,8 +75,8 @@ h1 {
   left: auto;
   top: auto;
   transform: none;
-  font-size: 40px;
-  color: #fff;
+  font-size: 65px;
+  color: #fff; /* White */
   margin: 0;
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: left;
@@ -221,7 +228,7 @@ footer {
   justify-content: flex-end; /* Aligns the grid to the right */
   align-items: flex-start;
   gap: 16px; /* Tighter space between columns */
-  margin: -100px 32px 0 auto; /* Negative top margin pulls images closer to header */
+  margin: 0;
 }
 .image-pair {
   display: flex;
@@ -250,6 +257,78 @@ footer {
     align-items: center;
     gap: 35px;
     margin-top: 8px;
+  }
+  .image-pair {
+    flex-direction: row;
+    gap: 8px;
+  }
+  .below-h2-img {
+    height: 64px;
+  }
+}
+
+/*
+  New below-h2-row container: flex container to place h3/h4 to the left of the images.
+*/
+.below-h2-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 32px; /* Space between text and images */
+  margin: -100px 32px 0 auto; /* Keep images high and right-aligned */
+}
+.below-h2-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  min-width: 220px;
+}
+.below-h2-text h3,
+.below-h2-text h4 {
+  text-align: right;
+  color: #fff; /* White for h3 and h4 in the below-h2-text section */
+}
+.below-h2-images {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .below-h2-row {
+    gap: 12px;
+    margin: -40px 8px 0 8px;
+  }
+  .below-h2-images {
+    gap: 8px;
+  }
+  .below-h2-img {
+    height: 100px;
+  }
+}
+@media (max-width: 600px) {
+  .below-h2-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0 0 0;
+  }
+  .below-h2-text {
+    align-items: center;
+    min-width: 0;
+  }
+  .below-h2-text h3,
+  .below-h2-text h4 {
+    text-align: center;
+  }
+  .below-h2-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
   }
   .image-pair {
     flex-direction: row;
@@ -303,4 +382,28 @@ footer {
   h2, .h2-below-logo {
     color: #ffc907; /* Primary yellow */
   }
+}
+
+/*
+  Heading 3 (h3): yellow, larger, bold, and centered.
+*/
+h3 {
+  color: #ffc907; /* Primary yellow */
+  font-size: 28px;
+  font-weight: 700;
+  margin: 18px 0 4px 0;
+  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+/*
+  Heading 4 (h4): white, medium size, normal weight, and centered.
+*/
+h4 {
+  color: #fff; /* White for contrast */
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 18px 0;
+  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
 }
