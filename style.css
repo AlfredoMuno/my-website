@@ -1,0 +1,136 @@
+/* Blank stylesheet for custom styles */
+
+/*
+  Main body styles: set up font, background, color, and center content vertically and horizontally.
+*/
+body {
+  margin: 0; /* Remove default margin */
+  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Font stack with fallbacks */
+  background-color: #fefefe; /* Light background for a clean look */
+  color: #003366; /* Primary blue for text */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  min-height: 100vh; /* Full viewport height */
+  padding: 2rem; /* Add space around content */
+}
+
+/*
+  Header styles: center text, add background, padding, rounded corners, and shadow for emphasis.
+*/
+header {
+  text-align: center; /* Center header text */
+  background-color: #fff7dc; /* Soft yellow background */
+  padding: 4rem 2rem; /* Space inside header */
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* Subtle shadow */
+  max-width: 800px; /* Limit width for readability */
+  width: 100%; /* Responsive width */
+  margin-bottom: 2rem; /* Space below header */
+}
+
+/*
+  Main heading (h1): large, bold, and yellow for impact.
+*/
+h1 {
+  font-size: 2.5rem; /* Large font size */
+  color: #ffc907; /* Primary yellow */
+  margin-bottom: 1rem; /* Space below heading */
+  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Consistent font */
+}
+
+/*
+  Subheading (h2): smaller, blue, and lighter weight.
+*/
+h2 {
+  font-size: 1.25rem; /* Medium font size */
+  color: #003366; /* Primary blue */
+  margin-bottom: 2rem; /* Space below subheading */
+  font-weight: 400; /* Normal weight */
+  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Consistent font */
+}
+
+/*
+  Impact image container: vertical stack, centered, with spacing.
+*/
+.impact-image {
+  margin: 2rem 0; /* Space above and below */
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack images vertically */
+  gap: 1rem; /* Space between images */
+  align-items: center; /* Center images horizontally */
+  width: 100%; /* Responsive width */
+}
+
+/*
+  Images: responsive, rounded, and with subtle shadow.
+*/
+.impact-image img {
+  width: 100%; /* Fill container width */
+  max-width: 800px; /* Limit max width */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Subtle shadow */
+}
+
+/*
+  Call-to-action button: yellow background, blue text, rounded, bold, and with hover effect.
+*/
+.cta {
+  background-color: #ffc907; /* Primary yellow */
+  color: #003366; /* Primary blue text */
+  border: none; /* Remove border */
+  padding: 1rem 2rem; /* Button size */
+  font-size: 1rem; /* Readable text */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Consistent font */
+  font-weight: 700; /* Bold text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* Subtle shadow */
+}
+
+/*
+  Button hover: darker yellow and white text for contrast.
+*/
+.cta:hover {
+  background-color: #e6b800; /* Darker yellow */
+  color: #fff; /* White text */
+}
+
+/*
+  Footer: muted color, centered, and slightly smaller text.
+*/
+footer {
+  margin-top: 3rem; /* Space above footer */
+  font-size: 0.95rem; /* Slightly smaller text */
+  color: #888; /* Muted gray */
+  text-align: center; /* Centered text */
+}
+
+/*
+  Responsive styles for tablets: reduce max width for header and images.
+*/
+@media (max-width: 900px) {
+  header, .impact-image img {
+    max-width: 95vw; /* Use most of the viewport width */
+  }
+}
+
+/*
+  Responsive styles for mobile: adjust padding and font sizes for better fit.
+*/
+@media (max-width: 600px) {
+  header {
+    padding: 2rem 0.5rem; /* Less padding on small screens */
+  }
+  h1 {
+    font-size: 2rem; /* Smaller heading */
+  }
+  h2 {
+    font-size: 1rem; /* Smaller subheading */
+  }
+  .impact-image img {
+    max-width: 100vw; /* Full viewport width */
+  }
+}
