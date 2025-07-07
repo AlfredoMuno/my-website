@@ -10,7 +10,9 @@
 <body>
   <!-- Move the Donate button to the bottom left corner using fixed positioning -->
   <!-- Combine the 'cta' and 'bottom-left' classes on this button -->
-  <button class="cta bottom-left">Start Your Impact: Donate</button>
+  <button class="cta bottom-left" id="donate-btn">Start Your Impact: Donate</button>
+  <!-- Water emoji burst container -->
+  <div id="emoji-burst-container"></div>
   <div class="logo-title-row">
     <img src="img/jerry.png" alt="Charity: Water Logo" class="corner-logo">
     <h1>Every Drop Creates Ripples</h1>
@@ -37,5 +39,37 @@
   <footer>
     © 2025 Charity: Water Project - Designed by Alfredo Munoz
   </footer>
+  <script>
+    // Water emoji burst animation on Donate button click
+    const donateBtn = document.getElementById('donate-btn');
+    const burstContainer = document.getElementById('emoji-burst-container');
+    function createBurst(x, y) {
+      const numEmojis = 12;
+      for (let i = 0; i < numEmojis; i++) {
+        const emoji = document.createElement('span');
+        emoji.textContent = '💧';
+        emoji.className = 'emoji-burst-emoji';
+        // Random angle and distance
+        const angle = (2 * Math.PI * i) / numEmojis + (Math.random() - 0.5) * 0.3;
+        const distance = 80 + Math.random() * 40;
+        // Set initial position
+        emoji.style.left = x + 'px';
+        emoji.style.top = y + 'px';
+        // Animate with CSS variables
+        emoji.style.setProperty('--angle', angle + 'rad');
+        emoji.style.setProperty('--distance', distance + 'px');
+        burstContainer.appendChild(emoji);
+        // Remove after animation
+        setTimeout(() => emoji.remove(), 1200);
+      }
+    }
+    donateBtn.addEventListener('click', function(e) {
+      // Get button center relative to viewport
+      const rect = donateBtn.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+      createBurst(x, y);
+    });
+  </script>
 </body>
 </html>
