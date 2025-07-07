@@ -94,7 +94,7 @@ h1 {
   margin: 12px 0 32px auto; /* Space above, below, and push right */
   width: 420px; /* Fixed width for alignment */
   max-width: 50vw; /* Responsive max width */
-  font-size: 12px; /* Medium font size */
+  font-size: 16px; /* Medium font size */
   color: #ffc907; /* Primary yellow */
   font-weight: 400; /* Normal weight */
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Consistent font */
@@ -147,6 +147,29 @@ h1 {
 .cta:hover {
   background-color: #e6b800; /* Darker yellow */
   color: #fff; /* White text */
+}
+
+/*
+  Move .cta button to the bottom left of the page, above the footer, with fixed positioning and responsive adjustments.
+*/
+.cta.bottom-left {
+  position: fixed; /* Fixed position at bottom left */
+  left: 32px;
+  bottom: 96px; /* Increased space from bottom edge */
+  z-index: 101; /* Above footer */
+  padding: 20px 48px;
+  font-size: 28px;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+@media (max-width: 600px) {
+  .cta.bottom-left {
+    left: 8px;
+    bottom: 120px; /* Extra space above mobile footer */
+    padding: 14px 28px;
+    font-size: 20px;
+    border-radius: 18px;
+  }
 }
 
 /*
@@ -397,13 +420,13 @@ h3 {
 }
 
 /*
-  Heading 4 (h4): white, medium size, normal weight, and centered.
+  Heading 4 (h4): match h3 style (yellow, larger, bold, centered, same font and margin).
 */
 h4 {
-  color: #fff; /* White for contrast */
-  font-size: 20px;
-  font-weight: 400;
-  margin: 0 0 18px 0;
+  color: #ffc907; /* Primary yellow, same as h3 */
+  font-size: 28px; /* Same as h3 */
+  font-weight: 700; /* Bold, same as h3 */
+  margin: 0px 0 4px 0; /* Same as h3 */
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
 }
